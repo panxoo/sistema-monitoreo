@@ -1,1 +1,12 @@
-<p>agrupacion-parametros works!</p>
+<div fxFlex="100%">
+  <mat-card>
+    <mat-card-title>Agrupacion Monitor</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let agrupacion of agrupaciones$ | async">
+          {{ agrupacion.nombre }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,1 +1,16 @@
-<p>monitor-item works!</p>
+<div fxFlex="100%">
+  <mat-card>
+    <mat-card-title>
+      {{ grupo.nombre }}
+    </mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let item of monitores | filtreObjeto : 'grupoId' : grupo.agrupacionID">
+          <!-- <mat-icon matListItemIcon [ngClass]="item.alerta ? 'circle-green' : 'circle-red'">circle</mat-icon> -->
+          <mat-icon matListItemIcon [ngClass]="item.alerta ? 'circle-green' : 'circle-red'">circle</mat-icon>
+          {{ item.title }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,1 +1,15 @@
-<p>monitores works!</p>
+<div fxLayout="column" fxLayoutGap="1.5%">
+  <app-monitor-resumen
+    *ngIf="monitores$ | async as monitorVisual"
+    [ok]="monitorVisual | combienObjeto : 'alerta' : true"
+    [error]="monitorVisual | combienObjeto : 'alerta' : false"></app-monitor-resumen>
+
+  <div fxLayout="row wrap" *ngIf="monitores$ | async as monitores">
+    <!-- <div *ngIf="monitores$ | async as monitores" fxLayout="row" fxLayoutGap="1.5%" fxLayout.xs="column" fxLayout.sm="column"> -->
+    <app-monitor-item
+      fxFlex
+      *ngFor="let group of agrupaciones$ | async"
+      [grupo]="group"
+      [monitores]="monitores | filtreObjeto : 'grupoId' : group.agrupacionID"></app-monitor-item>
+  </div>
+</div>

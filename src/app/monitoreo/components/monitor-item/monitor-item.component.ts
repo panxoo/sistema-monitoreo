@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MonitorVisual } from 'src/app/monitoreo/models/monitor-visual.model';
+import { Agrupation } from 'src/app/shared/models/agrupation.model';
 
 @Component({
   selector: 'app-monitor-item',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./monitor-item.component.scss']
 })
 export class MonitorItemComponent {
+
+  @Input() grupo!: Agrupation;
+  @Input() monitores!: MonitorVisual[];
 
 }

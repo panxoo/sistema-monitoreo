@@ -1,1 +1,13 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+  <span>Sistema Monitoreo</span>
+  <ul>
+    <li><button mat-button routerLink="monitor-visual">Monitor</button></li>
+    <li>
+      <button mat-button [matMenuTriggerFor]="belowMenu">Parametros</button>
+      <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item routerLink="parametros">Monitores</button>
+        <button mat-menu-item routerLink="parametros/general">General</button>
+      </mat-menu>
+    </li>
+  </ul>
+</mat-toolbar>

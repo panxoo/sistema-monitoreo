@@ -1,1 +1,12 @@
-<p>job-parametros works!</p>
+<div fxFlex="100%">
+  <mat-card>
+    <mat-card-title>Jobs Monitor</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let job of jobs$ | async">
+          {{ job.nombre }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
