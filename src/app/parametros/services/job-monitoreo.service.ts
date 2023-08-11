@@ -4,7 +4,9 @@ import { Observable } from "rxjs";
 import { Job } from "src/app/parametros/models/job.model";
 import { environment } from "src/environments/environment";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 
 export class JobMonitoreoService {
     constructor(private http: HttpClient) { }

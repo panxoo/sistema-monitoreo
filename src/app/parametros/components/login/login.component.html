@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title> Login </mat-card-title>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>User</mat-label>
+      <input type="text" matInput [formControl]="UserCntrl" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput [formControl]="PasswordCntrl" />
+    </mat-form-field>
+    <div *ngIf="login$ | async; else logd">logeado</div>
+    <ng-template #logd> no logeado </ng-template>
+  </div>
+  <mat-card-actions *ngIf="PasswordCntrl.valid && UserCntrl.valid">
+    <button mat-flat-button color="primary" (click)="onSubmitLogin()">ENREGISTRER</button>
+    <button mat-flat-button color="primary" (click)="onSubmitPrueba()">ENREGISTRER</button>
+  </mat-card-actions>
+</mat-card>
