@@ -4,7 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthentificationService } from 'src/app/shared/services/authentification.service';
+import { LogoutService } from 'src/app/core/services/logout.service';
 
 
 
@@ -18,11 +18,12 @@ import { AuthentificationService } from 'src/app/shared/services/authentificatio
     RouterModule,
     HttpClientModule
   ],
-  providers: [
-    AuthentificationService
-  ],
   exports: [
     HeaderComponent
+  ],
+  providers: [
+    LogoutService
   ]
+
 })
 export class CoreModule { }

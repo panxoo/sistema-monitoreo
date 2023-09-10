@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, map, tap } from 'rxjs';
-import { AuthentificationService } from 'src/app/shared/services/authentification.service';
+import { LogoutService } from 'src/app/core/services/logout.service';
+import { AuthentificationService } from 'src/app/parametros/services/authentification.service';
+import { LoginVariable } from 'src/app/shared/variables/login.variable';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +11,16 @@ import { AuthentificationService } from 'src/app/shared/services/authentificatio
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthentificationService) { }
+  constructor(private loginVariable: LoginVariable,
+    private logoutService: LogoutService) { }
   sesion$!: Observable<boolean>;
 
   ngOnInit(): void {
-    this.sesion$ = this.authService.logeado$;
-
+    this.sesion$ = this.loginVariable.logeado$;
   }
 
-
+  logout() {
+    this.logoutService.LogoutUser();
+  }
 
 }

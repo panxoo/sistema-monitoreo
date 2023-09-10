@@ -8,6 +8,9 @@ import { FiltreObjetoPipe } from 'src/app/shared/pipes/filtre-objeto.pipe';
 import { filtreMetodoPipe } from 'src/app/shared/pipes/filtre-metodo.pipe';
 import { CombienObjetoPipe } from 'src/app/shared/pipes/combien-objeto.pipe';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthentificationService } from 'src/app/parametros/services/authentification.service';
+
+
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     MaterialModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+
   ],
   exports: [
     MaterialModule,

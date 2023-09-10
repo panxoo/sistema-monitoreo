@@ -9,9 +9,11 @@
       <mat-label>Password</mat-label>
       <input type="password" matInput [formControl]="PasswordCntrl" />
     </mat-form-field>
-    <div *ngIf="login$ | async; else logd">logeado</div>
-    <ng-template #logd> no logeado </ng-template>
+    <!-- <div *ngIf="login$ | async; else logd">logeado</div>
+    <ng-template #logd> no logeado </ng-template>-->
   </div>
+
+  {{ login$ | async }}
   <mat-card-actions *ngIf="PasswordCntrl.valid && UserCntrl.valid">
     <button mat-flat-button color="primary" (click)="onSubmitLogin()">ENREGISTRER</button>
     <button mat-flat-button color="primary" (click)="onSubmitPrueba()">ENREGISTRER</button>

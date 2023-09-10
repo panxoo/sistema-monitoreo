@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Observable, first, map, tap } from 'rxjs';
-import { AuthentificationService } from 'src/app/shared/services/authentification.service';
+import { AuthentificationService } from 'src/app/parametros/services/authentification.service';
 import { User } from 'src/app/shared/models/user.model';
+import { LoginVariable } from 'src/app/shared/variables/login.variable';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import { User } from 'src/app/shared/models/user.model';
 export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
-    private authService: AuthentificationService) { }
+    private authService: AuthentificationService,
+    private loginVariable: LoginVariable) { }
 
   UserCntrl!: FormControl;
   PasswordCntrl!: FormControl;
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.UserCntrl = this.formBuilder.control('', [Validators.required, Validators.email]);
     this.PasswordCntrl = this.formBuilder.control('', [Validators.required]);
-    this.login$ = this.authService.logeado$;
+    this.login$ = this.loginVariable.logeado$;
   }
 
   onSubmitLogin() {
@@ -36,13 +38,13 @@ export class LoginComponent implements OnInit {
     }
 
     );
-    const usr = this.authService.sesion$.subscribe();
+    const usr = this.loginVariable.sesion$.subscribe();
 
     console.log(usr);
   }
 
   onSubmitPrueba() {
-    this.authService.LogoutUser();
+    this.authService.prueba();
     //let ff = this.authService.DatosToken();
     //console.log(ff);
   }

@@ -1,0 +1,40 @@
+[
+    {
+        "_id": "811182ab-f7fd-4c9f-98c2-9dfc6681c1a7",
+        "colId": "history",
+        "containerId": "",
+        "name": "https://localhost:7067/authentication/register",
+        "url": "https://localhost:7067/authentication/register",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-08-12T22:05:58.523Z",
+        "modified": "2023-08-12T22:05:58.523Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"Email\":\"fco@hot.cl\",\n  \"UserName\": \"panxoo\",\n  \"Password\": \"123Aze+\"\n}",
+            "form": []
+        },
+        "tests": []
+    },
+    {
+        "_id": "a8f039e4-b0af-498e-ba60-60baacdf5f45",
+        "colId": "history",
+        "containerId": "",
+        "name": "https://localhost:7067/api/authentication/register",
+        "url": "https://localhost:7067/api/authentication/register",
+        "method": "POST",
+        "sortNum": 0,
+        "created": "2023-08-12T22:06:33.592Z",
+        "modified": "2023-08-12T22:06:33.592Z",
+        "headers": [],
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"Email\":\"fco@hot.cl\",\n  \"UserName\": \"panxoo\",\n  \"Password\": \"123Aze+\"\n}",
+            "form": []
+        },
+        "tests": []
+    }
+]

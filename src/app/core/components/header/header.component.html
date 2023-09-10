@@ -5,15 +5,15 @@
     <li>
       <button mat-button [matMenuTriggerFor]="belowMenu">Parametros</button>
       <mat-menu #belowMenu="matMenu" yPosition="below">
-        <!-- <div *ngIf="sesion$ | async; else login">-->
-        <button mat-menu-item routerLink="parametros">Monitores</button>
-        <button mat-menu-item routerLink="parametros/general">General</button>
-        <!--   </div>
-        <ng-template #login>-->
-        <button mat-menu-item routerLink="parametros/login">login</button>
-        <!-- </ng-template>-->
+        <div *ngIf="sesion$ | async; else login">
+          <button mat-menu-item routerLink="parametros">Monitores</button>
+          <button mat-menu-item routerLink="parametros/general">General</button>
+          <button mat-menu-item (click)="logout()">Logout</button>
+        </div>
+        <ng-template #login>
+          <button mat-menu-item routerLink="parametros/login">login</button>
+        </ng-template>
       </mat-menu>
     </li>
-    <li>{{ sesion$ | async }}</li>
   </ul>
 </mat-toolbar>
